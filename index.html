@@ -1,0 +1,108 @@
+<html>
+    
+    <head>
+        <style>
+            body {
+                width: 100%;
+                height: auto;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                background-color: #221e1f;
+                font-family: Arial;
+            }
+            #container {
+                margin: 0 auto;
+                height: 100%;
+                overflow: hidden;
+                text-align: center;
+                position: relative;
+            }
+            #container video {
+                margin-left: -50%;
+                position: relative;
+            }
+            #container #logo {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -50%;
+                width: 100%;
+                text-align: center;
+            }
+            #mainpanel {
+                margin-top: 150px;
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            #mainpanel>div {
+                width: 50%;
+                border: solid 10px #221e1f;
+                box-sizing: border-box;
+                background-color: #484142;
+                text-align: center;
+                color: #FFFFFF;
+                float: left;
+                position: relative;
+            }
+            #mainpanel>div i {
+                padding-top: 40%;
+            }
+        </style>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript">
+            setTimeout(function(){
+                jQuery("#container #logo").animate({
+                    top: 50
+                }, {
+                    duration: 800,
+                    complete: function() {
+                        jQuery("#container video").fadeOut("slow");
+                    }
+                });
+            }, 3000);
+            jQuery(document).ready(function() {
+                jQuery("#mainpanel>div").each(function() {
+                    jQuery(this).height(jQuery(this).width());
+                });
+            });
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    
+    <body>
+        
+        <div id="container">
+            <video width="auto" height="100%" autoplay>
+                <source src="bc.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div id="logo">
+                <img src="logo.png" />
+            </div>
+            
+            <div id="mainpanel">
+                <div id="panel1">
+                    <i class="fa fa-3x fa-map-marker"></i>
+                    Find Us
+                </div>
+                <div id="panel2">
+                    <i class="fa fa-3x fa-wifi"></i>
+                    Wifi
+                </div>
+                <div id="panel3">
+                    <i class="fa fa-3x fa-graduation-cap"></i>
+                    Find a Course
+                </div>
+                <div id="panel4">
+                    <i class="fa fa-3x fa-external-link"></i>
+                    Website
+                </div>
+            </div>
+            
+        </div>        
+        
+    </body>
+    
+</html>
